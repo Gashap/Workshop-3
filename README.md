@@ -35,8 +35,7 @@ https://docs.google.com/document/d/1BdR4GflQkZ-MsZWAzLFT74Pz3evNDH4-li2W9z5dcjA/
 ## Задание 2
 ### С помощью скрипта на языке Python заполнить и визуализировать таблицу.
 
-[https://docs.google.com/spreadsheets/d/1v71SE_Vm_f_ZZyP7X1RBMFwWsIxJbkU6vHCb_LhmTzU/edit#gid=0](https://docs.google.com/spreadsheets/d/1RZJmFMXym4TlBwado694JVUt_JqkNgFi0uHUrM8B4rw/edit#gid=0)
-
+https://docs.google.com/spreadsheets/d/1v71SE_Vm_f_ZZyP7X1RBMFwWsIxJbkU6vHCb_LhmTzU/edit#gid=0
 ```py
 
 import gspread
