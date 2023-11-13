@@ -35,7 +35,7 @@ https://docs.google.com/spreadsheets/d/1RZJmFMXym4TlBwado694JVUt_JqkNgFi0uHUrM8B
 ## Задание 2
 ### Создать 10 сцен на Unity с изменяющимся уровнем сложности.
 
-
+https://github.com/Gashap/Workshop-3/tree/main/DragonPickerDefault-main
 
 ## Задание 3
 ### Заполнить таблицу данными из Python.Данные визуализировать.
