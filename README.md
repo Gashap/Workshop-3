@@ -30,44 +30,48 @@
 ## Задание 1
 ### Предложите вариант изменения найденных переменных для 10 уровней в игре. Визуализируйте изменение уровня сложности в таблице.
 
-(https://docs.google.com/spreadsheets/d/1RZJmFMXym4TlBwado694JVUt_JqkNgFi0uHUrM8B4rw/edit#gid=0)
+https://docs.google.com/spreadsheets/d/1RZJmFMXym4TlBwado694JVUt_JqkNgFi0uHUrM8B4rw/edit#gid=0
 
 ## Задание 2
-### С помощью скрипта на языке Python заполнить и визуализировать таблицу.
+### Создать 10 сцен на Unity с изменяющимся уровнем сложности.
 
-https://docs.google.com/spreadsheets/d/1v71SE_Vm_f_ZZyP7X1RBMFwWsIxJbkU6vHCb_LhmTzU/edit#gid=0
+
+
+## Задание 3
+### Заполнить таблицу данными из Python.Данные визуализировать.
+
+https://docs.google.com/spreadsheets/d/1R1PXARr9E0pX9N3GpGgvM8DjAj0qPXC-8OFASh44Bo0/edit#gid=0
 ```py
 
 import gspread
 import numpy as np
-
-gc = gspread.service_account(filename="atomic-heart-resources-b5be789ab3a6.json")
-sh = gc.open("Atomic Heart Resources")
-countRes = np.random.randint(0, 700, 8)
-priceRes = np.random.randint(1, 500, 8)
-
-mon = list(range(1, 7))
+gc = gspread.service_account(filename="dragonpickerdifficultylevels-3ff2d8edd3e2.json")
+sh = gc.open("DragonPickerDifficultyLevels")
+speed = 4
+border = 5
+egg_drop = 0.005
+time_egg_drop = 5.5
+level = list(range(1, 10))
 i = 0
 
-while i <= len(mon):
+
+while i <= len(level):
     i += 1
     if i == 0: continue
     else:
-        possibilityCreation = priceRes[i] - countRes[i]
-        possibilityCreation = str(possibilityCreation)
-        possibilityCreation = possibilityCreation.replace('.', ',')        
-        sh.sheet1.update(('A' + str(i)), int(i))
-        sh.sheet1.update(('B' + str(i)), int(priceRes[i]))
-        sh.sheet1.update(('C' + str(i)), int(countRes[i]))
-        sh.sheet1.update(('D' + str(i)), int(possibilityCreation))
-        print(possibilityCreation)
+        if i > 1:
+            speed += 1
+            if i%2 != 0: border += 1
+            egg_drop += 0.0025
+            time_egg_drop -= 0.5
+        sh.sheet1.update(('A' + str(i+2)), i)
+        sh.sheet1.update(('B' + str(i+2)), speed)
+        sh.sheet1.update(('C' + str(i+2)), border)
+        sh.sheet1.update(('D' + str(i+2)), egg_drop)
+        sh.sheet1.update(('E' + str(i+2)), time_egg_drop)
 
 ```
 
-## Задание 3
-### Настроить на сцене Unity воспроизведение звуковых файлов.
-
-https://github.com/Gashap/Workshop-2/tree/adf92f93e6b0eb86aa5b5b5ea9c13ae7264e0f91/My%20project
 
 ## Выводы
 
